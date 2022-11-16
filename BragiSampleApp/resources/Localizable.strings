@@ -7,3 +7,12 @@
 */
 
 "global.hello" = "Hello World!";
+
+"view.login.title" = "Log In";
+"view.login.button.login" = "Log In";
+
+"view.signUp.title" = "Sign Up";
+"view.signUp.button.signUp" = "Sign Up";
+
+"view.forgotPassword.title" = "Forgot Password";
+"view.forgotPassword.button.forgotPassword" = "Forgot Password";

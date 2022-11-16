@@ -15,6 +15,33 @@ internal enum L10n {
     /// Hello World!
     internal static let hello = L10n.tr("Localizable", "global.hello")
   }
+
+  internal enum View {
+    internal enum ForgotPassword {
+      /// Forgot Password
+      internal static let title = L10n.tr("Localizable", "view.forgotPassword.title")
+      internal enum Button {
+        /// Forgot Password
+        internal static let forgotPassword = L10n.tr("Localizable", "view.forgotPassword.button.forgotPassword")
+      }
+    }
+    internal enum Login {
+      /// Log In
+      internal static let title = L10n.tr("Localizable", "view.login.title")
+      internal enum Button {
+        /// Log In
+        internal static let login = L10n.tr("Localizable", "view.login.button.login")
+      }
+    }
+    internal enum SignUp {
+      /// Sign Up
+      internal static let title = L10n.tr("Localizable", "view.signUp.title")
+      internal enum Button {
+        /// Sign Up
+        internal static let signUp = L10n.tr("Localizable", "view.signUp.button.signUp")
+      }
+    }
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

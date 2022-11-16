@@ -1,5 +1,9 @@
 # Bragi Sample App
 
+## Step 1.
+
+1. Create 3 screens (Log In, Sign Up, Forgot Password) with an appropriate button at the center for each. A user opens screens in the listed order (use a navigation stack):
+
 ## Configuration
 
 ### gitignore

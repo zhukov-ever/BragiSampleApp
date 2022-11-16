@@ -9,38 +9,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Log InVC-->
+        <!--Sign UpVC-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="LogInVC" customModule="BragiSampleApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="SignUpVC" customModule="BragiSampleApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYU-c1-cQs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n34-8S-zHo">
                                 <rect key="frame" x="16" y="404.66666666666669" width="358" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="cta"/>
                                 <connections>
-                                    <action selector="loginHandler:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zW1-XR-Hhq"/>
+                                    <action selector="signUpHandler:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="7pc-8V-KGv"/>
                                 </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="cYU-c1-cQs" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="9kD-sa-gJF"/>
-                            <constraint firstItem="cYU-c1-cQs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="CU8-YK-97P"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cYU-c1-cQs" secondAttribute="trailing" constant="16" id="yIz-12-wnU"/>
+                            <constraint firstItem="n34-8S-zHo" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="38I-Ej-Ljd"/>
+                            <constraint firstItem="n34-8S-zHo" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="Ub5-gB-EZg"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="n34-8S-zHo" secondAttribute="trailing" constant="16" id="vSs-Z4-sPr"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonLogIn" destination="cYU-c1-cQs" id="Wk1-Nh-p7t"/>
+                        <outlet property="buttonSignUp" destination="n34-8S-zHo" id="dGn-ly-gh0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="138" y="4"/>
+            <point key="canvasLocation" x="88" y="-34"/>
         </scene>
     </scenes>
     <resources>

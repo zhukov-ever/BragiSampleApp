@@ -17,7 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let window = UIWindow()
         self.window = window
         
-        window.rootViewController = StoryboardScene.LogInIB.initialScene.instantiate()
+        let nvc = UINavigationController()
+        
+        let logInCoordinator = LogInCoordinator(navigationController: nvc)
+        logInCoordinator.start()
+            
+        window.rootViewController = nvc
         window.makeKeyAndVisible()
         
         return true

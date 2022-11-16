@@ -12,10 +12,20 @@ import UIKit
 
 // swiftlint:disable explicit_type_interface identifier_name line_length type_body_length type_name
 internal enum StoryboardScene {
+  internal enum ForgotPasswordIB: StoryboardType {
+    internal static let storyboardName = "ForgotPasswordIB"
+
+    internal static let initialScene = InitialSceneType<ForgotPasswordVC>(storyboard: ForgotPasswordIB.self)
+  }
   internal enum LogInIB: StoryboardType {
     internal static let storyboardName = "LogInIB"
 
     internal static let initialScene = InitialSceneType<LogInVC>(storyboard: LogInIB.self)
+  }
+  internal enum SignUpIB: StoryboardType {
+    internal static let storyboardName = "SignUpIB"
+
+    internal static let initialScene = InitialSceneType<SignUpVC>(storyboard: SignUpIB.self)
   }
 }
 // swiftlint:enable explicit_type_interface identifier_name line_length type_body_length type_name
