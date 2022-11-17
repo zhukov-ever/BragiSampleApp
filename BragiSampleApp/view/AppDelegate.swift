@@ -11,6 +11,12 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
+    var sl: ServiceLocator
+    
+    override init() {
+        sl = ServiceLocator()
+        super.init()
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
@@ -19,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let nvc = UINavigationController()
         
-        let logInCoordinator = LogInCoordinator(navigationController: nvc)
+        let logInCoordinator = LogInCoordinator(navigationController: nvc, sl: sl)
         logInCoordinator.start()
             
         window.rootViewController = nvc

@@ -9,6 +9,8 @@ import UIKit
 
 protocol SignUpPresenting {
     func signUpAction()
+    func viewWillAppear()
+    func viewDidDisappear()
 }
 
 final class SignUpVC: UIViewController {
@@ -21,12 +23,27 @@ final class SignUpVC: UIViewController {
     
     @IBOutlet private weak var buttonSignUp: UIButton!
     
+    private lazy var messageView: MessageView = DefaultMessageView()
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configure()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        presenter?.viewWillAppear()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        presenter?.viewDidDisappear()
     }
     
     // MARK: - Methods
@@ -50,6 +67,22 @@ final class SignUpVC: UIViewController {
 }
 
 extension SignUpVC: SignUpView {
-    
+    func update(with message: MessageType) {
+        Log.debug(in: self, message: message)
+        
+        switch message {
+        case let .connectionError(message):
+            messageView.styleError()
+            messageView.show(in: view, text: message)
+        case let .connected(message):
+            messageView.styleSuccess()
+            messageView.show(in: view, text: message)
+        case let .connecting(message):
+            messageView.styleWarning()
+            messageView.show(in: view, text: message)
+        case let .messageSent(message):
+            messageView.styleInfo()
+            messageView.show(in: view, text: message)
+        }
+    }
 }
-

@@ -2,13 +2,29 @@
 
 ## Step 1.
 
+*Desctiption*
+
 1. Create 3 screens (Log In, Sign Up, Forgot Password) with an appropriate button at the center for each. A user opens screens in the listed order (use a navigation stack)
 2. Create popup with 3 states:
     - connection error
     - connecting
     - connection established
     
-When a user presses a button, show a ​"message sent​" a pop up only if the current state is a c​onnection established.​
+    When a user presses a button, show a ​"message sent​" a pop up only if the current state is a c​onnection established.​
+
+3. Every 5 seconds show a simple pop up with a message ​only ​on the c​urrent​ screen (at the top).
+
+*Assumption:* user can be navigated to the next screen only if state == "connection established"
+
+*Requirenements:*
+- Use RxSwift to generate a connection state (in a random manner).
+- The next state should not be equal to the previous one.
+- Be consistent. Select any architecture of your choice and follow it on all screens. It might include but
+is not limited to MVC, MVVM, MVP, Redux/Flux.
+- Please do not access a shared state directly inside a view controller (e. g. State.shared)​and take
+advantage of t​he Dependency Injection principle instead.
+- Add unit tests for the state generator and the state renderer (e. g. UIViewController)
+- Support for iOS 11.0+
 
 ## Configuration
 
@@ -24,4 +40,4 @@ Note: `Pods` and `Carthage` folders are uncommented.
 
 Generated files are not ignored.
 
-Known issue: [Xcode 14 beta compile error when generate xcassets](https://github.com/SwiftGen/SwiftGen/issues/1004)
+*Known issue:* [Xcode 14 beta compile error when generate xcassets](https://github.com/SwiftGen/SwiftGen/issues/1004)

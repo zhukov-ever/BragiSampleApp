@@ -9,6 +9,8 @@ import UIKit
 
 protocol LogInPresenting {
     func logInAction()
+    func viewWillAppear()
+    func viewDidDisappear()
 }
 
 final class LogInVC: UIViewController {
@@ -36,15 +38,20 @@ final class LogInVC: UIViewController {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(false, animated: animated)
+        
+        presenter?.viewWillAppear()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        presenter?.viewDidDisappear()
     }
     
     // MARK: - Methods
     // MARK: Private methods
     
     @IBAction private func loginHandler(_ sender: Any) {
-//        presenter?.logInAction()
-            
-        showMessage()
+        presenter?.logInAction()
     }
     
     private func configure() {
@@ -57,29 +64,25 @@ final class LogInVC: UIViewController {
         view.stylePrimaryBackground()
         navigationController?.styleBase()
     }
-    
-    var i = 0
-    func showMessage() {
-        switch i % 4 {
-        case 0:
-            messageView.styleError()
-            messageView.show(in: view, text: L10n.Alert.ConnectionError.title)
-        case 1:
-            messageView.styleWarning()
-            messageView.show(in: view, text: L10n.Alert.Connecting.title)
-        case 2:
-            messageView.styleInfo()
-            messageView.show(in: view, text: L10n.Alert.MessageSent.title)
-        case 3:
-            messageView.styleSuccess()
-            messageView.show(in: view, text: L10n.Alert.ConnectionEstablished.title)
-        default:
-            break
-        }
-        i += 1
-    }
 }
 
 extension LogInVC: LogInView {
-    
+    func update(with message: MessageType) {
+        Log.debug(in: self, message: message)
+        
+        switch message {
+        case let .connectionError(message):
+            messageView.styleError()
+            messageView.show(in: view, text: message)
+        case let .connected(message):
+            messageView.styleSuccess()
+            messageView.show(in: view, text: message)
+        case let .connecting(message):
+            messageView.styleWarning()
+            messageView.show(in: view, text: message)
+        case let .messageSent(message):
+            messageView.styleInfo()
+            messageView.show(in: view, text: message)
+        }
+    }
 }

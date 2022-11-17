@@ -8,5 +8,6 @@
 import Foundation
 
 protocol Coordinating {
+    var sl: ServiceLocator { get }
     func start()
 }

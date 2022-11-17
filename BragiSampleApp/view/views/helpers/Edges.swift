@@ -5,7 +5,7 @@
 //  Created by Nikita Zhukov on 17.11.2022.
 //
 
-import Foundation
+import UIKit
 
 enum Edges {
     static let container = CGFloat(16.0)
