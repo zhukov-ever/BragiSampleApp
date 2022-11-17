@@ -11,6 +11,25 @@ import Foundation
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
 
+  internal enum Alert {
+    internal enum Connecting {
+      /// connecting
+      internal static let title = L10n.tr("Localizable", "alert.connecting.title")
+    }
+    internal enum ConnectionError {
+      /// connection error
+      internal static let title = L10n.tr("Localizable", "alert.connectionError.title")
+    }
+    internal enum ConnectionEstablished {
+      /// connection established
+      internal static let title = L10n.tr("Localizable", "alert.connectionEstablished.title")
+    }
+    internal enum MessageSent {
+      /// message sent
+      internal static let title = L10n.tr("Localizable", "alert.messageSent.title")
+    }
+  }
+
   internal enum Global {
     /// Hello World!
     internal static let hello = L10n.tr("Localizable", "global.hello")

@@ -21,6 +21,9 @@ final class LogInVC: UIViewController {
     
     @IBOutlet private weak var buttonLogIn: UIButton!
     
+    private lazy var messageView: MessageView = DefaultMessageView()
+    
+    
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
@@ -39,7 +42,9 @@ final class LogInVC: UIViewController {
     // MARK: Private methods
     
     @IBAction private func loginHandler(_ sender: Any) {
-        presenter?.logInAction()
+//        presenter?.logInAction()
+            
+        showMessage()
     }
     
     private func configure() {
@@ -53,7 +58,26 @@ final class LogInVC: UIViewController {
         navigationController?.styleBase()
     }
     
-    
+    var i = 0
+    func showMessage() {
+        switch i % 4 {
+        case 0:
+            messageView.styleError()
+            messageView.show(in: view, text: L10n.Alert.ConnectionError.title)
+        case 1:
+            messageView.styleWarning()
+            messageView.show(in: view, text: L10n.Alert.Connecting.title)
+        case 2:
+            messageView.styleInfo()
+            messageView.show(in: view, text: L10n.Alert.MessageSent.title)
+        case 3:
+            messageView.styleSuccess()
+            messageView.show(in: view, text: L10n.Alert.ConnectionEstablished.title)
+        default:
+            break
+        }
+        i += 1
+    }
 }
 
 extension LogInVC: LogInView {

@@ -15,15 +15,13 @@ extension UIButton {
             var configuration = UIButton.Configuration.filled()
             
             configuration.baseBackgroundColor = Asset.accentBackground.color
-            configuration.baseForegroundColor = Asset.onAccentText.color
+            configuration.baseForegroundColor = Asset.onDarkBackgroundText.color
             
             self.configuration = configuration
         } else {
             setBackgroundImage(Asset.accentBackground.color.image(), for: .normal)
             setBackgroundImage(Asset.accentBackground.color.withAlphaComponent(0.8).image(), for: .highlighted)
-            setTitleColor(Asset.onAccentText.color, for: .normal)
+            setTitleColor(Asset.onDarkBackgroundText.color, for: .normal)
         }
-        
-        
     }
 }

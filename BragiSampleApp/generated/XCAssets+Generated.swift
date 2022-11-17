@@ -21,10 +21,15 @@ internal typealias AssetColorTypeAlias = ColorAsset.Color
 internal enum Asset {
   internal static let accentBackground = ColorAsset(name: "AccentBackground")
   internal static let navigationBarBackground = ColorAsset(name: "NavigationBarBackground")
-  internal static let onAccentText = ColorAsset(name: "OnAccentText")
+  internal static let onDarkBackgroundText = ColorAsset(name: "OnDarkBackgroundText")
+  internal static let onLightBackgroundText = ColorAsset(name: "OnLightBackgroundText")
   internal static let primaryBackground = ColorAsset(name: "PrimaryBackground")
   internal static let primaryText = ColorAsset(name: "PrimaryText")
   internal static let secondaryBackground = ColorAsset(name: "SecondaryBackground")
+  internal static let backgroundMessageBlue = ColorAsset(name: "backgroundMessageBlue")
+  internal static let backgroundMessageGreen = ColorAsset(name: "backgroundMessageGreen")
+  internal static let backgroundMessageRed = ColorAsset(name: "backgroundMessageRed")
+  internal static let backgroundMessageYellow = ColorAsset(name: "backgroundMessageYellow")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

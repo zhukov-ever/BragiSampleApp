@@ -8,6 +8,11 @@
 
 "global.hello" = "Hello World!";
 
+"alert.connectionError.title" = "connection error";
+"alert.connecting.title" = "connecting";
+"alert.connectionEstablished.title" = "connection established";
+"alert.messageSent.title" = "message sent";
+
 "view.login.title" = "Log In";
 "view.login.button.login" = "Log In";
 
@@ -16,3 +21,4 @@
 
 "view.forgotPassword.title" = "Forgot Password";
 "view.forgotPassword.button.forgotPassword" = "Forgot Password";
+

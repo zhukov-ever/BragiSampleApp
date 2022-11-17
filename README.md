@@ -2,7 +2,13 @@
 
 ## Step 1.
 
-1. Create 3 screens (Log In, Sign Up, Forgot Password) with an appropriate button at the center for each. A user opens screens in the listed order (use a navigation stack):
+1. Create 3 screens (Log In, Sign Up, Forgot Password) with an appropriate button at the center for each. A user opens screens in the listed order (use a navigation stack)
+2. Create popup with 3 states:
+    - connection error
+    - connecting
+    - connection established
+    
+When a user presses a button, show a ​"message sent​" a pop up only if the current state is a c​onnection established.​
 
 ## Configuration
 
