@@ -67,7 +67,7 @@ final class SignUpVC: UIViewController {
 }
 
 extension SignUpVC: SignUpView {
-    func update(with message: MessageType) {
+    func show(message: MessageType) {
         Log.debug(in: self, message: message)
         
         switch message {

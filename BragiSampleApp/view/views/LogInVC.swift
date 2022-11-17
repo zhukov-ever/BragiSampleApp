@@ -9,6 +9,7 @@ import UIKit
 
 protocol LogInPresenting {
     func logInAction()
+    func sendCommand()
     func viewWillAppear()
     func viewDidDisappear()
 }
@@ -22,6 +23,7 @@ final class LogInVC: UIViewController {
     // MARK: Private properties
     
     @IBOutlet private weak var buttonLogIn: UIButton!
+    @IBOutlet private weak var buttonSendCommand: UIButton!
     
     private lazy var messageView: MessageView = DefaultMessageView()
     
@@ -54,10 +56,15 @@ final class LogInVC: UIViewController {
         presenter?.logInAction()
     }
     
+    @IBAction private func sendCommandHandler(_ sender: Any) {
+        presenter?.sendCommand()
+    }
+    
     private func configure() {
         title = L10n.View.Login.title
         
         buttonLogIn.stylePrimaryAction(with: L10n.View.Login.Button.login)
+        buttonSendCommand.stylePrimaryAction(with: L10n.View.Login.Button.sendCommand)
         
         navigationController?.navigationBar.prefersLargeTitles = true
         
@@ -67,7 +74,7 @@ final class LogInVC: UIViewController {
 }
 
 extension LogInVC: LogInView {
-    func update(with message: MessageType) {
+    func show(message: MessageType) {
         Log.debug(in: self, message: message)
         
         switch message {
@@ -84,5 +91,9 @@ extension LogInVC: LogInView {
             messageView.styleInfo()
             messageView.show(in: view, text: message)
         }
+    }
+    
+    func updateSendMessageButton(availability: Bool) {
+        buttonSendCommand.isEnabled = availability
     }
 }

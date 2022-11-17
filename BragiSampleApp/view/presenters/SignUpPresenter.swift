@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 protocol SignUpView: UIViewController {
-    func update(with message: MessageType)
+    func show(message: MessageType)
 }
 
 final class SignUpPresenter {
@@ -34,7 +34,7 @@ final class SignUpPresenter {
     private func updateViewIfNeeded(with message: MessageType) {
         if self.latestMessage != message {
             self.latestMessage = message
-            self.view?.update(with: message)
+            self.view?.show(message: message)
         }
     }
 

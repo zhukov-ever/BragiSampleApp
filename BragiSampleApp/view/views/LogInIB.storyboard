@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,11 +18,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYU-c1-cQs">
-                                <rect key="frame" x="16" y="404.66666666666669" width="358" height="35"/>
+                                <rect key="frame" x="16" y="406.66666666666669" width="358" height="31"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="cta"/>
                                 <connections>
                                     <action selector="loginHandler:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="zW1-XR-Hhq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xrN-7r-sRa">
+                                <rect key="frame" x="16" y="449.66666666666669" width="358" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="cta"/>
+                                <connections>
+                                    <action selector="sendCommandHandler:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="0kF-1p-jpL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -30,12 +38,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cYU-c1-cQs" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" id="9kD-sa-gJF"/>
+                            <constraint firstItem="xrN-7r-sRa" firstAttribute="trailing" secondItem="cYU-c1-cQs" secondAttribute="trailing" id="9kp-h2-H7z"/>
+                            <constraint firstItem="xrN-7r-sRa" firstAttribute="leading" secondItem="cYU-c1-cQs" secondAttribute="leading" id="BmQ-qK-PFX"/>
                             <constraint firstItem="cYU-c1-cQs" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="CU8-YK-97P"/>
+                            <constraint firstItem="xrN-7r-sRa" firstAttribute="top" secondItem="cYU-c1-cQs" secondAttribute="bottom" constant="12" id="Keb-vb-2sR"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="cYU-c1-cQs" secondAttribute="trailing" constant="16" id="yIz-12-wnU"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="buttonLogIn" destination="cYU-c1-cQs" id="Wk1-Nh-p7t"/>
+                        <outlet property="buttonSendCommand" destination="xrN-7r-sRa" id="n7R-GJ-zHQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -60,7 +60,7 @@ final class ForgotPasswordVC: UIViewController {
 }
 
 extension ForgotPasswordVC: ForgotPasswordView {
-    func update(with message: MessageType) {
+    func show(message: MessageType) {
         Log.debug(in: self, message: message)
         
         switch message {

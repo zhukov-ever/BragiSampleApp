@@ -12,8 +12,7 @@ class MockBaseInteractor {
     
     private let connectionService: ConnectionService
     private let bag = DisposeBag()
-    private let trigger = PublishSubject<Void>()
-    
+    private let sendMessageStopTrigger = PublishSubject<Void>()
     
     init(sl: ServiceLocator) {
         self.connectionService = sl.connectionService
@@ -22,7 +21,7 @@ class MockBaseInteractor {
     func establishConnection() -> Observable<Result<ConnectionState, ConnectionError>>? {
         return connectionService
             .establishConnectionIfNeeded()
-            .take(until: trigger)
+            .take(until: sendMessageStopTrigger)
     }
     
     func sendMessage() -> Observable<Result<Void, ConnectionError>> {
@@ -33,7 +32,7 @@ class MockBaseInteractor {
             
             switch result {
             case .success:
-                self.trigger.onNext(())
+                self.sendMessageStopTrigger.onNext(())
             case .failure:
                 break
             }

@@ -8,7 +8,7 @@
 import Foundation
 import RxSwift
 
-class MockConnectionService: ConnectionService {
+final class MockConnectionService: ConnectionService {
     private let timerFreq = 5
     private var timer: Observable<Int>?
     

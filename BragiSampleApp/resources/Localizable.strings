@@ -15,6 +15,7 @@
 
 "view.login.title" = "Log In";
 "view.login.button.login" = "Log In";
+"view.login.button.sendCommand" = "Send Commands";
 
 "view.signUp.title" = "Sign Up";
 "view.signUp.button.signUp" = "Sign Up";

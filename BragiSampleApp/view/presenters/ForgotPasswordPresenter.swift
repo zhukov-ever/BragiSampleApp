@@ -9,7 +9,7 @@ import UIKit
 import RxSwift
 
 protocol ForgotPasswordView: UIViewController {
-    func update(with message: MessageType)
+    func show(message: MessageType)
 }
 
 final class ForgotPasswordPresenter {
@@ -34,7 +34,7 @@ final class ForgotPasswordPresenter {
     private func updateViewIfNeeded(with message: MessageType) {
         if self.latestMessage != message {
             self.latestMessage = message
-            self.view?.update(with: message)
+            self.view?.show(message: message)
         }
     }
 

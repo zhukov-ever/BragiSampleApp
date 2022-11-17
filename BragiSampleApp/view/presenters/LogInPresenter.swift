@@ -9,7 +9,8 @@ import UIKit
 import RxSwift
 
 protocol LogInView: UIViewController {
-    func update(with message: MessageType)
+    func show(message: MessageType)
+    func updateSendMessageButton(availability: Bool)
 }
 
 final class LogInPresenter {
@@ -34,7 +35,7 @@ final class LogInPresenter {
     private func updateViewIfNeeded(with message: MessageType) {
         if self.latestMessage != message {
             self.latestMessage = message
-            self.view?.update(with: message)
+            self.view?.show(message: message)
         }
     }
 }
@@ -56,6 +57,13 @@ extension LogInPresenter: LogInPresenting {
                 case .failure:
                     break
                 }
+        }).disposed(by: bag)
+    }
+    
+    func sendCommand() {
+        view?.updateSendMessageButton(availability: false)
+        interactor.sendCommands().subscribe(onCompleted: { [weak self] in
+            self?.view?.updateSendMessageButton(availability: true)
         }).disposed(by: bag)
     }
     

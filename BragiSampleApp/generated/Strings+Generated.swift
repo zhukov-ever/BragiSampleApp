@@ -50,6 +50,8 @@ internal enum L10n {
       internal enum Button {
         /// Log In
         internal static let login = L10n.tr("Localizable", "view.login.button.login")
+        /// Send Commands
+        internal static let sendCommand = L10n.tr("Localizable", "view.login.button.sendCommand")
       }
     }
     internal enum SignUp {

@@ -10,5 +10,6 @@ import Foundation
 class ServiceLocator {
     
     lazy var connectionService: ConnectionService = MockConnectionService()
+    lazy var commandsService: CommandsService = MockCommandsService()
     
 }
