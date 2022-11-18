@@ -9,7 +9,6 @@ import Foundation
 import RxSwift
 
 final class MockConnectionService: ConnectionService {
-    private let timerFreq = 5
     private var timer: Observable<Int>?
     
     private var latestConnectionState: Result<ConnectionState, ConnectionError>?
@@ -22,7 +21,7 @@ final class MockConnectionService: ConnectionService {
         }
 
         return timer
-            .filter { $0 % self.timerFreq == 0 }
+            .filter { $0 % MockConstants.connectionStateUpdateSecs == 0 }
             .map { [weak self] element in
                 let availableStates = [
                     Result.success(ConnectionState.connecting),

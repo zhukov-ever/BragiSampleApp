@@ -17,7 +17,6 @@ final class MockCommandsService: CommandsService {
     }
     
     private let queueLabel = "com.bragi.command_service"
-    private let defaultCapacity = 10
     
     private var commandGroups: DispatchGroup?
     private var observable: PublishSubject<Void>?
@@ -31,7 +30,7 @@ final class MockCommandsService: CommandsService {
         let observable = PublishSubject<Void>()
         self.observable = observable
         
-        startService(capacity: defaultCapacity)
+        startService(capacity: MockConstants.numberOfSendCommand)
         
         return observable
     }
